@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The New Avengers</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta name="description" content="What is the story behind Thunderbolts?.">
+<meta name="keywords" content="Avengers: Doomsday,Yelena Belova , Bucky Barnes , John Walker , Robert Reynolds , Alexei Shostakov , Ava Starr">
+<meta name="author" content="yousef gamal">
+<meta name="Robots" content="index , follow" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="The New Avengers" />
+<meta property="og:description" content="a term used to describe two distinct Marvel teams. " />
+<meta property="og:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+<meta property="og:url" content="https://yourdomain.com/Ava%20Starr.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The New Avengers" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The New Avengers" />
+<meta name="twitter:description" content="a term used to describe two distinct Marvel teams. " />
+<meta name="twitter:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+
+    
+
+    <style>
+      body {
+  background: linear-gradient(
+      rgba(3, 11, 26, 0.85),
+      rgba(3, 11, 26, 0.85)
+    ),
+    url("thunderbolts\ poster\ 4k.jpeg") no-repeat center center;
+  background-size: cover;         /* تغطية كاملة */
+  background-position: center;    /* وسط الشاشة */
+  background-repeat: no-repeat;   /* بدون تكرار */
+  background-attachment: fixed;   /* تبقى ثابته أثناء السكرول (اختياري) */
+  height: 100vh;                  /* طول الشاشة بالكامل */
+  color: white;
+  font-family: "Roboto", sans-serif;
+   backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  animation: fadeIn 2s ease-in-out;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        background-color: #030b1a;
+        color: white;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ===== ANIMATION KEYFRAMES ===== */
+      @keyframes slideFadeDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes cardFadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px) scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes hoverPulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      
+
+      
+      
+
+      
+      
+
+      nav a:hover {
+         color: #f5c518;
+  transform: scale(1.1);
+      }
+
+      header {
+         position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(3, 11, 26, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+  animation: slideFadeDown 1s ease forwards;
+   max-width: 100%;
+  margin: auto;
+  flex-wrap: wrap;
+  
+      }
+header:hover {
+  background: rgba(3, 11, 26, 0.85);
+}
+      .logo-title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .logo-title h1 {
+         color: #f5c518;
+  font-size: 28px;
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      }
+      .logo {
+          width: 80px;
+  height: 110px;
+  transition: transform 0.3s ease;
+      }
+     
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+      nav a {
+          color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  transition: color 0.3s, transform 0.3s;
+      }
+
+      .search-box {
+         padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: box-shadow 0.3s;
+      }
+      .search-box:focus {
+  box-shadow: 0 0 30px #f5c518;
+}
+
+      .characters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px 20px;
+        gap: 20px;
+      }
+
+      .character-card {
+         background: #1f2a40;  /* لون خلفية أفتح شوية شبه اللي في الصورة */
+  text-align: center;
+  width: 300px;
+  border-radius: 12px;  /* حواف دائرية أكبر */
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  height: 400px;
+  opacity: 0;
+  transform: translateY(50px);
+   transition: 
+    transform 0.4s ease, 
+    box-shadow 0.4s ease, 
+    background 0.4s ease,
+    filter 0.4s ease;
+  cursor: pointer;
+  
+      }
+
+      .character-card:hover {
+         transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to bottom right, #2e3b55, #3c4f6e);
+  filter: brightness(1.1);
+  
+      }
+
+      .character-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease; /* التحريك الناعم */
+      }
+
+      .character-card h3 {
+         background-color: #3b4b6b;
+  padding: 10px;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+      }
+      .character-card:hover h3 {
+  background-color: #f5c518;
+  color: #1f2a40;
+}
+.character-card:hover img {
+  transform: scale(1.05) rotate(1deg); /* تكبير وتحريك خفيف */
+}
+
+      .article {
+          padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  height: auto;
+
+      }
+      .text{
+        color:#f5c518 ;
+      }
+     .paragraph {
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-left: 5px solid #f5c518;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.paragraph :first-child {
+  color: #f5c518;
+}
+
+      .article h4 {
+        color: #f5c518;
+        font-weight: bold;
+      }
+      .article h2 {
+        margin: 15px 0;
+      }
+      .author-details {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9em;
+        margin-top: 10px;
+        color: #bbb;
+      }
+
+      .gray-box {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 0.85em;
+        margin: 40px auto;
+        max-width: 700px;
+        color: #ccc;
+        margin-left: 10em;
+      }
+      
+      .document{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 60%;
+        
+        
+        
+      }
+
+      footer {
+        padding: 40px;
+        background-color: #030b1a;
+        border-top: 1px solid #333;
+        text-align: center;
+        
+      }
+      
+        
+      
+      .footer-top,
+      .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 80px;
+        margin-bottom: 20px;
+        
+      }
+      footer a {
+        color: white;
+        text-decoration: none;
+        
+      }
+      .footer-bottom p {
+        color: #999;
+        font-size: 0.85em;
+      }
+
+      .footer-top div {
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.footer-top div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f5c518;
+  transition: width 0.3s ease;
+}
+
+.footer-top div:hover {
+  color: #f5c518;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.footer-top div:hover::after {
+  width: 100%;
+}
+
+      .social-icons img {
+        width: 50px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+      }
+      .social-icons img:hover {
+  transform: scale(1.2);
+}
+      .author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.author-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.video-container {
+  position: relative;
+   max-width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(245, 197, 24, 0.3);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 600px) {
+  .video-container {
+    padding-bottom: 65%; /* اعلى شوية عشان يبان كويس على الموبايل */
+    margin: 0 10px;
+  }
+}
+
+
+
+      /* RESPONSIVE */
+      @media (max-width: 968px) {
+        header {
+          
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+          flex-direction: column;
+          font-size: xx-large;
+        }
+        .logo-title {
+          flex-direction: column;
+          align-items: center;
+        }
+        nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .search-box {
+          width: 90%;
+          max-width: 300px;
+        }
+        .paragraph {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .article {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .gray-box {
+    margin-left: 0;
+    padding: 15px;
+  }
+        
+      }
+      @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-title">
+        <img loading="lazy" src="avengrs.png" alt="Logo" class="logo" />
+        <h1>Thunderbolts*</h1>
+      </div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="#">Thunderbolts</a>
+        <a href="Imd.html">IMDB</a>
+        <a href="MARVEL Studios.html">MARVEL</a>
+        <a href="jake schreier.html">DIRECTOR</a>
+      </nav>
+      <input class="search-box" type="text" placeholder="SEARCH" id="search-box"/>
+    </header>
+
+    <section class="characters">
+      <a href="Yelena Belova.html">
+      <div class="character-card">
+        <h3>Yelena Belova</h3>
+        <img loading="lazy" src="elyna.png" alt="Yelena Belova" />
+      </div>
+      </a>
+      <a href="Bucky Barnes.html">
+      <div class="character-card">
+        <h3>Bucky Barnes</h3>
+        <img loading="lazy" src="baky.png" alt="Bucky Barnes" />
+      </div>
+      </a>
+      <a href="u.s agent.html">
+      <div class="character-card">
+        <h3>John Walker</h3>
+        <img loading="lazy" src="wolkor.png" alt="John Walker" />
+      </div>
+      </a>
+      <a href="robert reynolds.html">
+      <div class="character-card">
+        <h3>Robert Reynolds</h3>
+        <img loading="lazy" src="bob1.jpeg" alt="Robert Reynolds" />
+      </div>
+      </a>
+      <a href="Alexei Shostakov.html">
+      <div class="character-card">
+        <h3>Alexei Shostakov</h3>
+        <img loading="lazy" src="alixe.png" alt="Alexei Shostakov" />
+      </div>
+      </a>
+      <a href="Ava Starr.html">
+      <div class="character-card">
+        <h3>Ava Starr</h3>
+        <img loading="lazy" src="th wasp.png" alt="Ava Starr" />
+      </div>
+      </a>
+    </section>
+    
+    <section class="article">
+    <h1 class="text">The New Avengers</h1>
+      <h2>
+        Thunderbolts* / The New Avengers Director Explains Why THAT Character
+        Had to Die: 'It Just Felt Like the Movie at That Point Was a Little
+        Bloodless'
+        
+      </h2>
+     <div class="author">
+  <img loading="lazy" src="yousef.png" alt="Author" class="author-img">
+  <span>By Youssef Gamal Abdel Aziz</span>
+</div>
+        <p>
+          Posted: May 18, 2025 – 11:38 PM<br />Updated: May 18, 2025 – 11:51 PM
+        </p>
+        <br>
+        <div class="paragraph">
+           
+        <h1>"Thunderbolts*"</h1><p class="font"> Thunderbolts* [a] is a 2025 American superhero film based on Marvel Comics featuring the team Thunderbolts. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the 36th film in the Marvel Cinematic Universe (MCU). The film was directed by Jake Schreier from a screenplay by Eric Pearson and Joanna Calo, and stars an ensemble cast featuring Florence Pugh, Sebastian Stan, Wyatt Russell, Olga Kurylenko, Lewis Pullman, Geraldine Viswanathan, Chris Bauer, Wendell Pierce, David Harbour, Hannah John-Kamen, and Julia Louis-Dreyfus. In the film, a group of antiheroes are caught in a deadly trap and forced to work together on a dangerous mission.
+
+Marvel Studios first teased the formation of a Thunderbolts team within the MCU in 2021. The film was revealed to be in development in June 2022, when Schreier and Pearson were attached. The main cast was revealed in September, with additional casting through early 2023. Lee Sung Jin joined to rewrite the script by March 2023, one of several creatives who returned to work with Schreier from the Netflix series Beef (2023–present). Production was delayed due to the 2023 Hollywood labor disputes, causing some cast changes in early 2024. Calo joined by then for further rewrites. Filming took place from February to June 2024 at Trilith Studios and Atlanta Metro Studios in Atlanta, Georgia, and also on location in Utah and Kuala Lumpur.
+
+Thunderbolts* premiered on April 22, 2025, at the Cineworld Leicester Square in London, England, and was released in the United States on May 2, as the final film of Phase Five of the MCU. The film's ending reveals that the Thunderbolts team is rebranded as the "New Avengers", with the end credits revealing the asterisk in the film's title stands for The New Avengers; following the film's opening weekend, Marvel Studios began marketing it with that title. Despite positive reviews from critics, Thunderbolts* has underperformed at the box office, grossing $380 million against a production budget of $180 million, though it became the seventh-highest-grossing film of 2025.
+      </p>
+      
+        
+        </div>
+      </div>
+      <br>
+      <br>
+      
+      <div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/7rs_HhSA7XY" 
+    title="Marvel's Thunderbolts* Trailer"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+
+    </section>
+<div class="document">
+    <div class="gray-box">
+      <p>
+        The director of <strong>Thunderbolts*</strong> — now officially renamed
+        <strong>The New Avengers</strong> — has explained why one character in
+        particular had to die early on in the movie, and how conversations with
+        the actor who played the character went.<br /><br />
+        <strong
+          >Warning! Spoilers for Thunderbolts* / The New Avengers
+          follow:</strong
+        >
+        Early in Thunderbolts* / The New Avengers, Taskmaster (Olga Kurylenko)
+        is killed by Ava Starr / Ghost (Hannah John-Kamen), unceremoniously shot
+        in the head as the assassins come to blows within a covert O.X.E.
+        facility. Taskmaster dies in her first and only scene in the movie.
+      </p>
+    </div>
+    <div class="gray-box">
+      <p>
+        New Avengers <strong>Thunderbolts*</strong> — "For years I have been working secretly to develop a new age of
+        <strong>The New Avengers</strong> protection. Today, the citizens of the United States needed that protection, and thanks to my hard work they got it. Ladies and gentlemen... meet the New Avengers."
+―Valentina Allegra de Fontaine<br /><br />
+        <strong
+          >The New Avengers, previously named the Thunderbolts by Alexei Shostakov, are a team of extraordinary individuals, with either</strong
+        >
+        superpowers or other special characteristics. 
+        They were assembled in 2027 as a result of being targeted by Valentina Allegra de
+         Fontaine and working together to stop the Void from taking over New York City. Following
+          their victory, de Fontaine manipulated the situation to declare the team as the newly formed 
+          iteration of the Avengers, which was met with a mixed reception from the public.
+      </p>
+    </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <footer>
+      <div class="footer-top">
+        <a href="Yelena Belova.html">
+        <div>Yelena Belova</div>
+        </a>
+        <a href="Bucky Barnes.html">
+        <div>Bucky Barnes</div>
+        </a>
+        <a href="u.s agent.html">
+        <div>John Walker</div>
+        </a>
+        <a href="robert reynolds.html">
+        <div>Robert Reynolds</div>
+        </a>
+        <a href="Alexei Shostakov.html">
+        <div>Alexei Shostakov</div>
+        </a>
+        <a href="Ava Starr.html">
+        <div>Ava Starr</div>
+        </a>
+        <a href="MARVEL Studios.html">
+        <div>MARVEL</div>
+        </a>
+        <a href="Imd.html">
+       <div>IMDB</div>
+        </a>
+        <a href="#">
+        <div>Thunderbolts*</div>
+        </a>
+        <a href="jake schreier.html"><div>jake schreier</div></a>
+      </div>
+      <div class="social-icons">
+        <img src="youtuip.png" alt="YouTube" />
+        <img src="towwtter.png" alt="Twitter" />
+        <img src="instgram.png" alt="Instagram" />
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025-2026 CompanyName Inc.</p>
+      </div>
+    </footer>
+    <script>
+         // Animation delay for cards
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".character-card");
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.style.animation = "cardFadeUp 0.8s forwards";   // بطاقات الشخصيات بتظهر وحدة بوحدة من أسفل إلى أعلى، مع شفافية تدريجية، لما تفتح الصفحة. تأثير احترافي وسلس جدًا.
+          }, index * 300);
+        });
+      });
+      
+      if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.addEventListener("load", () => {
+    // أرجع الصفحة لفوق
+    window.scrollTo(0, 0);
+
+    // لو فيه input معين عايز تركز عليه، خليه بعد شوية
+    setTimeout(() => {
+      const input = document.getElementById("search-box");
+      if (input) input.focus();
+    }, 500);
+  });
+
+  window.onbeforeunload = () => {
+    window.scrollTo(0, 0);
+  };
+
+  
+
+  
+  // === البحث عن الصفحات ===
+const routes = {
+  "home": "index.html",
+  "thunderbolts": "Thunderbolts 2025.html",
+  "imd": "Imd.html",
+  "marvel": "MARVEL Studios.html",
+  "jake schreier": "jake schreier.html",
+  "yelena belova": "Yelena Belova.html",
+  "bucky barnes": "Bucky Barnes.html",
+  "john walker": "u.s agent.html",
+  "ava starr": "Ava Starr.html",
+  "sentry": "robert reynolds.html",
+  "alexei shostakov": "Alexei Shostakov.html"
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  // === تفعيل الـ Search Box ===
+  const searchInput = document.getElementById("search-box");
+  if (searchInput) {
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const input = this.value.trim().toLowerCase();
+        let found = false;
+
+        for (let key in routes) {
+          if (key.includes(input)) {
+            setTimeout(() => {
+              window.location.href = routes[key];
+            }, 2000); // ⏱ تأخير هنا كمان
+            found = true;
+            break;
+          }
+        }
+
+        if (!found) {
+          alert("🔍 الكلمة غير معروفة، جرّب اسم شخصية أو عنوان صفحة.");
+        }
+      }
+    });
+  }
+
+  // === تأخير التنقل عند الضغط على أي رابط ===
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const url = this.getAttribute('href');
+      if (!url || url.startsWith("#")) return;
+
+      e.preventDefault(); // نمنع الانتقال الفوري
+      setTimeout(() => {
+        window.location.href = url;
+      }, 2000); // ⏱ التأخير هنا (2 ثانية)
+    });
+  });
+});
+    </script>
+  </body>
+</html>

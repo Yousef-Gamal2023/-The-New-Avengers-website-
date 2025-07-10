@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yelena Belova</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="description" content="What is Yelena's superhero name?.">
+<meta name="keywords" content="Avengers: Doomsday,Black Widow , Yelena Belova, Thunderbolts ,  Avengers , Marvel">
+<meta name="author" content="yousef gamal">
+<meta name="Robots" content="index , follow" />
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Yelena Belova" />
+<meta property="og:description" content="a skilled martial artist, markswoman, and assassin." />
+<meta property="og:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+<meta property="og:url" content="https://yourdomain.com/Ava%20Starr.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Yelena Belova" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Yelena Belova" />
+<meta name="twitter:description" content="a skilled martial artist, markswoman, and assassin." />
+<meta name="twitter:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+
+    
+
+    <style>
+      body {
+  background: linear-gradient(
+      rgba(3, 11, 26, 0.85),
+      rgba(3, 11, 26, 0.85)
+    ),
+    url("elyna.png") no-repeat center center;
+  background-size: cover;         /* تغطية كاملة */
+  background-position: center;    /* وسط الشاشة */
+  background-repeat: no-repeat;   /* بدون تكرار */
+  background-attachment: fixed;   /* تبقى ثابته أثناء السكرول (اختياري) */
+  height: 100vh;                  /* طول الشاشة بالكامل */
+  color: white;
+  font-family: "Roboto", sans-serif;
+   backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  animation: fadeIn 2s ease-in-out;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        background-color: #030b1a;
+        color: white;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      
+      /* ===== ANIMATION KEYFRAMES ===== */
+      @keyframes slideFadeDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background: rgba(3, 11, 26, 0.6);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s ease;
+        animation: slideFadeDown 1s ease forwards;
+        max-width: 100%;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+      header:hover {
+        background: rgba(3, 11, 26, 0.85);
+      }
+      .logo-title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .logo-title h1 {
+        color: #f5c518;
+        font-size: 28px;
+        font-weight: 700;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      }
+      .logo {
+        width: 80px;
+        height: 110px;
+        transition: transform 0.3s ease;
+      }
+      
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+        font-size: 1.1rem;
+        transition: color 0.3s, transform 0.3s;
+      }
+      nav a:hover {
+        color: #f5c518;
+        transform: scale(1.1);
+      }
+
+      .search-box {
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        transition: box-shadow 0.3s;
+      }
+      .search-box:focus {
+        box-shadow: 0 0 30px #f5c518;
+      }
+      .quote-box {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 30px 25px;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-left: 5px solid #434343;
+        border-radius: 12px;
+        text-align: left;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+      }
+
+      .quote-box p {
+        color: #f0f0f0;
+        font-size: 1.1rem;
+        line-height: 2;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+      }
+
+      .quote-box .quote-highlight {
+        color: #f54242;
+        font-weight: 600;
+        font-size: 1.2rem;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .main-content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto 80px auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
+      }
+
+      .article-content {
+        flex: 2 1 600px;
+        background: rgba(255, 255, 255, 0.025);
+        border-radius: 18px;
+        padding: 40px 36px;
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
+        color: #e0e6f0;
+        font-size: 1.125rem;
+        line-height: 1.9;
+        transition: 0.3s;
+      }
+
+      
+
+      .article-content h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: "Georgia", serif;
+        color: #f54242;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+      }
+
+      .article-content p {
+        margin-bottom: 20px;
+      }
+
+      .sidebar {
+        flex: 1 1 320px;
+        background: linear-gradient(to bottom right, #1f1f1f, #2c2f3f);
+        border-radius: 16px;
+        padding: 28px 24px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+        color: #f0f0f0;
+        min-width: 260px;
+        max-width: 360px;
+        transition: 0.3s;
+      }
+
+      
+
+      .sidebar h3 {
+        color: #f54242;
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+        letter-spacing: 0.8px;
+        text-align: center;
+        border-bottom: 2px solid #f5c51830;
+        padding-bottom: 8px;
+      }
+
+      .sidebar-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .sidebar-table th,
+      .sidebar-table td {
+        padding: 6px 0;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .sidebar-table th {
+        font-weight: 600;
+        color: #f54242;
+        width: 40%;
+      }
+
+      .sidebar-table td {
+        font-weight: 400;
+        color: #e6e6e6;
+      }
+
+      .sidebar ul {
+        list-style: disc;
+        margin: 10px 0 10px 20px;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin-bottom: 6px;
+      }
+
+      .sidebar div:last-child {
+        margin-top: 20px;
+        font-weight: 500;
+      }
+      footer {
+        padding: 40px;
+        background-color: #030b1a;
+        border-top: 1px solid #333;
+        text-align: center;
+        
+      }
+      
+        
+      
+      .footer-top,
+      .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 80px;
+        margin-bottom: 20px;
+        
+      }
+      footer a {
+        color: white;
+        text-decoration: none;
+        
+      }
+      .footer-bottom p {
+        color: #999;
+        font-size: 0.85em;
+      }
+
+      .footer-top div {
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.footer-top div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f5c518;
+  transition: width 0.3s ease;
+}
+
+.footer-top div:hover {
+  color: #f5c518;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.footer-top div:hover::after {
+  width: 100%;
+}
+
+      .social-icons img {
+        width: 50px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+      }
+      .social-icons img:hover {
+  transform: scale(1.2);
+}
+
+      .gallery {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .main-image img {
+        width: 100%;
+        max-width: 700px;
+        border-radius: 14px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        transition: 0.4s ease;
+      }
+
+      .thumbnails {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .thumbnails img {
+        width: 100px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: 0.3s;
+        border: 2px solid transparent;
+      }
+
+      .thumbnails img:hover {
+        opacity: 1;
+        border-color: #f5c518;
+      }
+
+      @media (max-width: 1000px) {
+        .main-content-wrapper {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .sidebar,
+        .article-content {
+          min-width: 0;
+          max-width: 100%;
+        }
+      }
+        @media (max-width: 968px) {
+        header {
+          
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+          flex-direction: column;
+          font-size: xx-large;
+        }
+        .logo-title {
+          flex-direction: column;
+          align-items: center;
+        }
+        nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .search-box {
+          width: 90%;
+          max-width: 300px;
+        }}
+      @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-title">
+        <img loading="lazy" loading="lazy" src="avengrs.png" alt="Logo" class="logo" />
+        <h1>Thunderbolts*</h1>
+      </div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="Thunderbolts 2025.html">Thunderbolts</a>
+        <a href="Imd.html">IMDB</a>
+        <a href="MARVEL Studios.html">MARVEL</a>
+        <a href="jake schreier.html">DIRECTOR</a>
+      </nav>
+      <input class="search-box" type="text" placeholder="SEARCH" id="search-box"/>
+    </header>
+    <section
+      style="text-align: center; padding: 60px 20px;"
+    >
+      <button
+        style="
+          padding: 12px 30px;
+          font-size: 1.1rem;
+          border-radius: 25px;
+          background: linear-gradient(to right, #8f8a8a, #434343);
+          color: #ffffff;
+          border: none;
+          box-shadow: 0 4px 15px #434343;
+          margin-bottom: 30px;
+        "
+      >
+        Yelena Belova
+      </button>
+
+      <div class="quote-box">
+        <p>
+          <span class="quote-highlight">"I Am So Alone."</span><br />
+          In the Marvel Cinematic Universe, Yelena Belova is introduced as
+          Natasha Romanoff's adoptive younger sister. She is a product of the
+          Red Room's<br /><br />
+          rigorous training and becomes a skilled assassin, eventually taking on
+          the<br /><br />
+          mantle of Black Widow. In the "Black Widow" movie, Yelena and Natasha
+          reunite after years apart, working together to dismantle the Red Room
+          and confront their shared past.
+        </p>
+      </div>
+
+      <div style="margin-top: 40px">
+        <img
+        loading="lazy"
+          src="Yelena Belova.jpeg"
+          alt="Yelena Belova"
+          style="
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+          "
+        />
+      </div>
+    </section>
+
+    <div class="main-content-wrapper">
+      <div class="article-content">
+        <h2>Yelena Belova</h2>
+        <p>
+          <strong>(Russian: Елена Белова)</strong> is the
+          <strong>adoptive younger sister of Natasha Romanoff</strong>, a Red
+          Room operative who worked for General Dreykov as a Black Widow and a
+          founding member and leader of the New Avengers. Following Romanoff's
+          defection from the Red Room, Belova and other Black Widows were put
+          through a mind-control program and turned into Dreykov's obedient
+          subordinates. When she was freed from the Red Room's control, Belova
+          joined forces with Romanoff, as well as their adoptive parents Red
+          Guardian and Melina Vostokoff, to bring down the Red Room once and for
+          all. They eventually succeeded and liberated all Black Widows, with
+          Belova directly killing Dreykov. After parting ways with Romanoff,
+          Belova spent two years freeing many of the remaining brainwashed Black
+          Widows before she was killed by Thanos' Snap.
+        </p>
+        <p>
+          Upon her resurrection in the Blip in 2023, Belova attempted to seek
+          out Romanoff, but was informed that she had died. While visiting
+          Romanoff's grave, Belova was given an assignment by Valentina Allegra
+          de Fontaine, who claimed that Clint Barton was responsible for
+          Romanoff's death and that she was to eliminate him. In December 2024,
+          Belova came into conflict with Barton and his protégé Kate Bishop.
+          Belova held back against hurting Bishop, and though she came close to
+          killing Barton, Barton managed to get through to Belova and explain
+          that Romanoff's death was of her own choice to save Belova and the
+          world. Coming to terms with Barton and accepting Romanoff's death,
+          Belova abandoned her mission and departed.
+        </p>
+        <p>
+          Years later, a depressed Belova was still under the employment of de
+          Fontaine until she sent her, along with other operatives, on a mission
+          to kill each other in an attempt to get rid of any incriminating
+          evidence while facing impeachment. Belova learned the truth and teamed
+          up with U.S. Agent, Ghost and Red Guardian to escape getting
+          assassinated by de Fontaine's forces, then they were recruited by
+          Winter Soldier to help bring down de Fontaine and stop her plans to
+          use Bob Reynolds as her own weapon. Belova and her team eventually
+          saved both Manhattan and Reynolds from Void, and when they tried to
+          apprehend de Fontaine, they were publicly declared by de Fontaine as
+          the New Avengers instead.
+        </p>
+      </div>
+      <aside class="sidebar">
+        <h3>Yelena Belova</h3>
+        <table class="sidebar-table">
+          <tr>
+            <th>Real Name</th>
+            <td>Yelena Belova (Елена Белова)</td>
+          </tr>
+          <tr>
+            <th>Aliases</th>
+            <td>Crimson Widow, Black Widow, The New Avengers</td>
+          </tr>
+          <tr>
+            <th>Species</th>
+            <td>Human</td>
+          </tr>
+          <tr>
+            <th>Citizenship</th>
+            <td>
+              <span>&#127479;&#127482; Russia</span><br />
+              <span>&#127482;&#127480; United States</span>
+            </td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>Female</td>
+          </tr>
+          <tr>
+            <th>Date of Birth</th>
+            <td>May 20<sup>th</sup>, 1988<sup>[1]</sup></td>
+          </tr>
+          <tr>
+            <th>Blupped</th>
+            <td>YES</td>
+          </tr>
+        </table>
+        <div class="affiliations">
+          <strong>Affiliation:</strong>
+          <ul>
+            <li>West-Chesapeake Valley, Thunderbolts (formerly)</li>
+            <li>Red Room (formerly, brainwashed)</li>
+            <li>Black Widows (ex-brainwashed)</li>
+            <li>New Avengers</li>
+          </ul>
+        </div>
+        <div class="appearances">
+          <strong>Appearances:</strong>
+          <ul>
+            <li>Black Widow</li>
+            <li>Hawkeye (TV)</li>
+            <li>Thunderbolts*</li>
+            <li>Avengers: Doomsday</li>
+          </ul>
+        </div>
+        <div><strong>Portrayed by:</strong> Florence Pugh</div>
+      </aside>
+    </div>
+
+    <section
+      style="padding: 60px 20px;  text-align: center"
+    >
+      <h2
+        style="
+          font-size: 2.3rem;
+          color: #f54242;
+          margin-bottom: 30px;
+          font-weight: bold;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        "
+      >
+        First Appearance of Florence Pugh the Yelena Belova in Marvel Cinematic Universe
+      </h2>
+
+      <div
+        style="
+          max-width: 900px;
+          margin: 0 auto 40px auto;
+          border-radius: 18px;
+          overflow: hidden;
+          box-shadow: 0 6px 30px rgba(255, 255, 255, 0.08);
+        "
+      >
+        <iframe
+          width="100%"
+          height="506"
+          src="https://www.youtube.com/embed/Fp9pNPdNwjI"
+          title="Yelena Belova First Scene - Marvel Studios"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="border: none"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <p
+        style="
+          max-width: 850px;
+          margin: 0 auto 40px auto;
+          font-size: 1.1rem;
+          line-height: 1.9;
+          color: #e0e6f0;
+          background-color: rgba(255, 255, 255, 0.02);
+          padding: 25px 30px;
+          border-left: 4px solid #434343;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+          text-align: left;
+        "
+      >
+        <strong><em>Yelena Belova's debut in the MCU</em></strong> took place in
+        <span style="color: #f54242">*Black Widow*</span> (2021), where she
+        instantly captivated audiences with her blend of fierce combat skills
+        and emotional depth. Introduced as Natasha Romanoff’s adoptive sister,
+        Yelena’s dynamic presence brought a mix of rivalry, pain, and loyalty to
+        the screen. Her tragic past as a brainwashed operative from the Red Room
+        gave her character complexity, adding depth to Marvel’s spy narrative.
+        Florence Pugh’s portrayal was both powerful and vulnerable, earning
+        acclaim for making Yelena more than just a side character. The film
+        explored her emotional scars and longing for family, crafting a
+        compelling foundation for her future. Her sarcastic humor and blunt
+        honesty made her stand out among Marvel heroes. In action scenes, Yelena
+        matched Natasha’s agility and strength, showing she's more than capable.
+        <em>*Black Widow*</em> wasn’t just a send-off for Natasha, but a
+        powerful introduction for Yelena. It passed the torch emotionally and
+        narratively. This marked the beginning of Yelena’s journey, which would
+        grow into a central role in stories like <em>*Thunderbolts*</em>.
+      </p>
+
+      <button
+        onclick="toggleMoreInfo()"
+        style="
+          padding: 12px 28px;
+          font-size: 1.05rem;
+          background: linear-gradient(135deg, #8f8a8a, #434343);
+          color: #ffffff;
+          font-weight: 600;
+          border-radius: 30px;
+          border: none;
+          cursor: pointer;
+          box-shadow: 0 4px 18px rgba(245, 197, 24, 0.2);
+          transition: transform 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'"
+        onmouseout="this.style.transform='scale(1)'"
+      >
+        See More
+      </button>
+
+      <div
+        id="more-info"
+        style="
+          display: none;
+          margin-top: 40px;
+          max-width: 800px;
+          margin-inline: auto;
+          text-align: left;
+          background-color: rgba(255, 255, 255, 0.03);
+          padding: 25px 30px;
+          border-radius: 16px;
+          color: #e0e6f0;
+          font-size: 1.1rem;
+          line-height: 1.85;
+          box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+        "
+      >
+        <h3 style="color: #f54242; margin-bottom: 15px">
+          Who is Yelena Belova?
+        </h3>
+        <p>
+          Yelena Belova was introduced as part of the Red Room, a secret Soviet
+          program that trained female spies to become deadly assassins. She was
+          portrayed as the younger sister of Natasha Romanoff (Black Widow).
+          <br /><br />
+          Over time, Yelena evolved from a mind-controlled operative into a
+          powerful independent character, seeking her own identity beyond her
+          past. Her journey has taken her from spy missions to battles alongside
+          the Avengers.
+          <br /><br />
+          She's known for her courage, sarcasm, and emotional complexity, making
+          her one of the most interesting and human characters in the Marvel
+          Universe today.
+        </p>
+        <div class="gallery">
+  <div class="main-image" style="
+  width: 90%; 
+  max-width: 700px; 
+  aspect-ratio: 7 / 4.5; 
+  margin: auto; 
+  border-radius: 14px; 
+  overflow: hidden; 
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+">
+  <img loading="lazy" id="displayed-img" src="yelena-belova-with-natasha-romanoff-qprkoiqulqj18wuf.jpg" alt="Bucky and Steve" style="
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: 0.4s ease;
+  " />
+</div>
+
+  <div class="thumbnails" style="margin-top:15px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+    <img loading="lazy" src="yelena-belova-with-natasha-romanoff-qprkoiqulqj18wuf.jpg" onclick="changeImage(this)" />
+    <img loading="lazy" src="black-widow-yelena-natasha.jpeg" onclick="changeImage(this)" />
+    <img loading="lazy" src="florence-pugh-and-hailee-steinfeld-in-hawkeye.jpeg" onclick="changeImage(this)" />
+    <img loading="lazy" src="alx.jpeg" onclick="changeImage(this)" />
+    <img loading="lazy" src="thunderbolts-d23-brazil-feature-image.avif" onclick="changeImage(this)" />
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <a href="#">
+        <div>Yelena Belova</div>
+        </a>
+        <a href="Bucky Barnes.html">
+        <div>Bucky Barnes</div>
+        </a>
+        <a href="u.s agent.html">
+        <div>John Walker</div>
+        </a>
+        <a href="robert reynolds.html">
+        <div>Robert Reynolds</div>
+        </a>
+        <a href="Alexei Shostakov.html">
+        <div>Alexei Shostakov</div>
+        </a>
+        <a href="Ava Starr.html">
+        <div>Ava Starr</div>
+        </a>
+        <a href="MARVEL Studios.html">
+        <div>MARVEL</div>
+        </a>
+        <a href="Imd.html">
+       <div>IMDB</div>
+        </a>
+        <a href="Thunderbolts 2025.html">
+        <div>Thunderbolts*</div>
+        </a>
+        <a href="jake schreier.html"><div>jake schreier</div></a>
+      </div>
+      <div class="social-icons">
+        <img src="youtuip.png" alt="YouTube" />
+        <img src="towwtter.png" alt="Twitter" />
+        <img src="instgram.png" alt="Instagram" />
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025-2026 CompanyName Inc.</p>
+      </div>
+    </footer>
+    
+
+    
+
+    <script>
+      function toggleMoreInfo() {
+        const box = document.getElementById("more-info");
+        if (box.style.display === "none") {
+          box.style.display = "block";
+        } else {
+          box.style.display = "none"; // لمربع أو عنصر موجود في الصفحة (Toggle)  هو ببساطة عبارة عن زرار إظهار/إخفاء
+        }
+      }
+      function changeImage(img) {
+        document.getElementById("displayed-img").src = img.src; //لتعرض نفس الصورة اللي ضغطت عليها (#displayed-img) بتقوم بتغيير الصورة الرئيسية الكبيرة
+      }
+      if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.addEventListener("load", () => {
+    // أرجع الصفحة لفوق
+    window.scrollTo(0, 0);
+
+    // لو فيه input معين عايز تركز عليه، خليه بعد شوية
+    setTimeout(() => {
+      const input = document.getElementById("search-box");
+      if (input) input.focus();
+    }, 500);
+  });
+
+  window.onbeforeunload = () => {
+    window.scrollTo(0, 0);
+  };
+
+
+
+ // === البحث عن الصفحات ===
+const routes = {
+  "home": "index.html",
+  "thunderbolts": "Thunderbolts 2025.html",
+  "imd": "Imd.html",
+  "marvel": "MARVEL Studios.html",
+  "jake schreier": "jake schreier.html",
+  "yelena belova": "Yelena Belova.html",
+  "bucky barnes": "Bucky Barnes.html",
+  "john walker": "u.s agent.html",
+  "ava starr": "Ava Starr.html",
+  "sentry": "robert reynolds.html",
+  "alexei shostakov": "Alexei Shostakov.html"
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  // === تفعيل الـ Search Box ===
+  const searchInput = document.getElementById("search-box");
+  if (searchInput) {
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const input = this.value.trim().toLowerCase();
+        let found = false;
+
+        for (let key in routes) {
+          if (key.includes(input)) {
+            setTimeout(() => {
+              window.location.href = routes[key];
+            }, 2000); // ⏱ تأخير هنا كمان
+            found = true;
+            break;
+          }
+        }
+
+        if (!found) {
+          alert("🔍 الكلمة غير معروفة، جرّب اسم شخصية أو عنوان صفحة.");
+        }
+      }
+    });
+  }
+
+  // === تأخير التنقل عند الضغط على أي رابط ===
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const url = this.getAttribute('href');
+      if (!url || url.startsWith("#")) return;
+
+      e.preventDefault(); // نمنع الانتقال الفوري
+      setTimeout(() => {
+        window.location.href = url;
+      }, 2000); // ⏱ التأخير هنا (2 ثانية)
+    });
+  });
+});
+    </script>
+    
+  </body>
+</html>

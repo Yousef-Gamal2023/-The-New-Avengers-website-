@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta
+      name="description"
+      content="an online database that provides information about movies, TV shows, and video games | a website that aggregates movie and TV show reviews from critics and audiences, presenting them as a percentage of positive reviews."
+    />
+    <meta
+      name="keywords"
+      content="Avengers: Doomsday,Yelena Belova, Bucky Barnes, John Walker, Robert Reynolds, Alexei Shostakov,Ava Starr,Jake Schreier,thunderbolts,The New Avengers,"
+    />
+    <meta name="author" content="yousef gamal" />
+    <meta name="Robots" content="index , follow" />
+
+
+     <!-- Open Graph / Facebook -->
+<meta property="og:title" content="Imdb | Rotten Tomatoes" />
+<meta property="og:description" content="an online database that provides information about movies, TV shows, and video games | a website that aggregates movie and TV show reviews from critics and audiences, presenting them as a percentage of positive reviews." />
+<meta property="og:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+<meta property="og:url" content="https://yourdomain.com/Ava%20Starr.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Imdb | Rotten Tomatoes" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Imdb | Rotten Tomatoes" />
+<meta name="twitter:description" content="an online database that provides information about movies, TV shows, and video games | a website that aggregates movie and TV show reviews from critics and audiences, presenting them as a percentage of positive reviews." />
+<meta name="twitter:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+       body {
+  background: linear-gradient(
+      rgba(3, 11, 26, 0.85),
+      rgba(3, 11, 26, 0.85)
+    ),
+    url("thunderbolts_\ 4k\ wallpaper.jpeg") no-repeat center center;
+  background-size: cover;         /* تغطية كاملة */
+  background-position: center;    /* وسط الشاشة */
+  background-repeat: no-repeat;   /* بدون تكرار */
+  background-attachment: fixed;   /* تبقى ثابته أثناء السكرول (اختياري) */
+  height: 100vh;                  /* طول الشاشة بالكامل */
+  color: white;
+  font-family: "Roboto", sans-serif;
+   backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  animation: fadeIn 2s ease-in-out;
+}
+
+
+      body {
+        background-color: #030b1a;
+        color: white;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+        header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background: rgba(3, 11, 26, 0.6);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s ease;
+        animation: slideFadeDown 1s ease forwards;
+        max-width: 100%;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+      header:hover {
+        background: rgba(3, 11, 26, 0.85);
+      }
+      .logo-title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .logo-title h1 {
+        color: #f5c518;
+        font-size: 28px;
+        font-weight: 700;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      }
+      .logo {
+        width: 80px;
+        height: 110px;
+        transition: transform 0.3s ease;
+      }
+      
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+        font-size: 1.1rem;
+        transition: color 0.3s, transform 0.3s;
+      }
+      nav a:hover {
+        color: #f5c518;
+        transform: scale(1.1);
+      }
+
+      .search-box {
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        transition: box-shadow 0.3s;
+      }
+      .search-box:focus {
+        box-shadow: 0 0 30px #f5c518;
+      }
+      /* ===== ANIMATION KEYFRAMES ===== */
+      @keyframes slideFadeDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 968px) {
+        header {
+          
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+          flex-direction: column;
+          font-size: xx-large;
+        }
+        .logo-title {
+          flex-direction: column;
+          align-items: center;
+        }
+        nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .search-box {
+          width: 90%;
+          max-width: 300px;
+        }}
+
+
+.performance-overview {
+  flex-basis: 100%;
+  
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  border-left: 5px solid #f5c518;
+  border-radius: 12px;
+  animation: fadeIn 1s ease-out forwards;
+  
+}
+
+.performance-overview h2 {
+  font-size: 2rem;
+  color: #f5c518;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.performance-overview p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #e0e6f0;
+}
+
+.performance-overview .imdb-score {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.performance-overview .rt-score {
+  color: #ff4e4e;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.performance-overview .box-office {
+  color: #4be37a;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+.rating-section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 40px 0 0 0;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.rating-section {
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(to right, #101c2c, #0c1624);
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  animation: fadeIn 1s ease-in;
+}
+
+/* Responsive: allow more width on larger screens */
+@media (min-width: 600px) {
+  .rating-section {
+    max-width: 420px;
+  }
+}
+@media (min-width: 900px) {
+  .rating-section {
+    max-width: 600px;
+  }
+}
+
+.rating-circle {
+  text-align: center;
+  width: 120px;
+  position: relative;
+  color: white;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px;
+  max-height: 100px;
+  transform: rotate(-90deg);
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  stroke: #f5c518;
+  transition: stroke-dasharray 3s ease-in-out; /* ← أطول وأنعم */
+}
+.rt .circle {
+  stroke: red;
+}
+
+.percentage {
+  fill: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.6em;
+  text-anchor: middle;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.rating-icon {
+  width: 52px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.6s ease;
+  border-radius: 2em;
+}
+.page-topic-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 30px;
+  padding: 50px 40px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.topic-container {
+  background-color: #101c2c;
+  border-left: 4px solid #f5c518;
+  padding: 25px 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(245, 197, 24, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.topic-container h3 {
+  color: #f5c518;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topic-container p {
+  color: #e0e6f0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.origin-section,
+.budget-section {
+  padding: 60px 40px;
+  background: linear-gradient(to right, #0c1624, #101c2c);
+  border-left: 5px solid #f5c518;
+  border-radius: 12px;
+  margin: 50px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 20px rgba(245, 197, 24, 0.07);
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.origin-section h2,
+.budget-section h2 {
+  color: #f5c518;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.origin-section p,
+.budget-section p {
+  color: #e0e6f0;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+ /* ========== TIMELINE SECTION ========== */
+    .timeline-section {
+      background: linear-gradient(to right, #0c1624, #111927);
+      padding: 60px 40px;
+      border-left: 5px solid #f5c518;
+      margin: 60px auto;
+      border-radius: 12px;
+      animation: fadeIn 1.2s ease;
+      box-shadow: 0 4px 20px rgba(245, 197, 24, 0.08);
+      max-width: 1000px;
+    }
+
+    .timeline-section h2 {
+      color: #f5c518;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    }
+
+    .timeline {
+      list-style: none;
+      color: #e0e6f0;
+      padding-left: 30px;
+      border-left: 3px solid #f5c518;
+      position: relative;
+    }
+
+    .timeline li {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline li::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: #f5c518;
+      border-radius: 50%;
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      box-shadow: 0 0 10px rgba(245, 197, 24, 0.6);
+    }
+
+    .timeline li strong {
+      color: #fff;
+    }
+
+.gallery-section {
+  padding: 60px 40px;
+  background: #101c2c;
+  animation: fadeIn 1.2s ease-out;
+  border-left: 5px solid #f5c518;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(245, 197, 24, 0.1);
+  margin: 60px auto;
+  max-width: 1600px;
+}
+
+.gallery-section h2 {
+  color: #f5c518;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ← زوّد العرض الأدنى */
+  gap: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 24 / 19; /* ممكن تغيّرها مثلاً لـ 4 / 3 لو عايز الطول يزيد */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+
+
+.director-quotes-section {
+  padding: 60px 5%;
+  background: linear-gradient(to right, #0c1624, #101c2c);
+  animation: fadeIn 1.2s ease-out;
+  border-left: 5px solid #f5c518;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(245, 197, 24, 0.08);
+  width: 100%;
+  margin: 60px 0;
+}
+
+.director-quotes-section h2 {
+  color: #f5c518;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quotes-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.quote-card {
+  flex: 1 1 48%;
+  background-color: #101c2c;
+  border-left: 4px solid #f5c518;
+  padding: 30px 35px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(245, 197, 24, 0.08);
+  transition: transform 0.3s ease;
+  min-width: 300px;
+}
+
+
+
+.quote-card p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  font-style: italic;
+  color: #e0e6f0;
+  margin-bottom: 14px;
+}
+
+.quote-card span {
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: bold;
+}
+
+/* 4. VIDEO BACKGROUND */
+.video-background-section {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+.video-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.video-content h2 {
+  font-size: 2.5rem;
+  color: #f5c518;
+}
+
+.video-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+footer {
+        padding: 40px;
+        background-color: #030b1a;
+        border-top: 1px solid #333;
+        text-align: center;
+        
+      }
+      
+        
+      
+      .footer-top,
+      .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 80px;
+        margin-bottom: 20px;
+        
+      }
+      footer a {
+        color: white;
+        text-decoration: none;
+        
+      }
+      .footer-bottom p {
+        color: #999;
+        font-size: 0.85em;
+      }
+
+      .footer-top div {
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.footer-top div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #f5c518;
+  transition: width 0.3s ease;
+}
+
+.footer-top div:hover {
+  color: #f5c518;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.footer-top div:hover::after {
+  width: 100%;
+}
+
+      .social-icons img {
+        width: 50px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+      }
+      .social-icons img:hover {
+  transform: scale(1.2);
+}
+
+
+    </style>
+</head>
+<body>
+  <header>
+      <div class="logo-title">
+        <img src="avengrs.png" alt="Logo" class="logo" />
+        <h1>Thunderbolts*</h1>
+      </div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="Thunderbolts 2025.html">Thunderbolts</a>
+        <a href="#">IMDB</a>
+        <a href="MARVEL Studios.html">MARVEL</a>
+        <a href="jake schreier.html">DIRECTOR</a>
+      </nav>
+      <input class="search-box" type="text" placeholder="SEARCH" id="search-box" />
+    </header>
+    <br>
+    <br>
+    <section class="performance-overview">
+  <h2>Thunderbolts: A Cinematic Breakthrough</h2>
+  <p>
+    Marvel's <strong>Thunderbolts</strong> shattered expectations with its deep dive into anti-hero storytelling,
+    mental health themes, and reformation arcs. With a respectable <span class="imdb-score">7.7/10</span> on 
+    <strong>IMDb</strong>, and a glowing <span class="rt-score">88%</span> on <strong>Rotten Tomatoes</strong>,
+    the film resonated with critics and audiences alike. Beyond ratings, the movie stormed the 
+    <strong>box office</strong>, grossing over <span class="box-office">$650 million</span> worldwide, proving that 
+    audiences are ready for a darker, more introspective chapter of the MCU.
+  </p>
+</section>
+<section class="page-topic-section">
+  <div class="topic-container">
+    <h3><span>📊 IMDb Score</span></h3>
+    <p>
+      Thunderbolts has earned a solid <strong>7.7/10</strong> on IMDb — a rating that reflects widespread audience approval.
+      Viewers praised the film’s bold direction, character arcs, and mental health themes, setting it apart from the formulaic
+      superhero fare.
+    </p>
+  </div>
+
+  <div class="topic-container">
+    <h3><span>🍅 Rotten Tomatoes</span></h3>
+    <p>
+      Critics gave Thunderbolts a <strong>88% rating</strong> on Rotten Tomatoes. It was applauded for being emotionally layered,
+      daring in tone, and committed to showcasing redemption rather than spectacle. A rare Marvel film that hits the heart first.
+    </p>
+  </div>
+
+  <div class="topic-container">
+    <h3><span>💵 Box Office</span></h3>
+    <p>
+      Grossing over <strong>$650 million worldwide</strong>, Thunderbolts proved there's still massive demand for morally grey heroes.
+      Despite being a darker entry in the MCU, the film pulled strong numbers and became a sleeper hit with repeat viewership.
+    </p>
+  </div>
+
+  <div class="topic-container">
+    <h3><span>🎭 Message & Cultural Impact</span></h3>
+    <p>
+      Beyond action and thrills, Thunderbolts sparked important conversations about trauma, grief, and recovery. Its focus
+      on mental resilience over brute force resonated with audiences, making it a rare superhero film that stays with you long
+      after the credits roll.
+    </p>
+  </div>
+</section>
+
+<!-- Add wrapper for rating section -->
+<div class="rating-section-wrapper">
+  <section class="rating-section">
+  <div class="rating-circle">
+    <svg viewBox="0 0 36 36" class="circular-chart imdb">
+      <path class="circle-bg"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      <path class="circle" id="imdb-progress"
+        stroke-dasharray="0, 100"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      <text x="18" y="20.35" class="percentage" id="imdb-score">0</text>
+    </svg>
+    <img src="20250627_1539_IMDb Logo_simple_compose_01jyrpan47e53vs5ssf1354pbg.png" alt="IMDb" class="rating-icon" />
+  </div>
+
+  <div class="rating-circle">
+    <svg viewBox="0 0 36 36" class="circular-chart rt">
+      <path class="circle-bg"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      <path class="circle" id="rt-progress"
+        stroke-dasharray="0, 100"
+        d="M18 2.0845
+           a 15.9155 15.9155 0 0 1 0 31.831
+           a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      <text x="18" y="20.35" class="percentage" id="rt-score">0%</text>
+    </svg>
+    <img src="20250627_1600_Rotting Tomatoes Pile_simple_compose_01jyrqg2cyf5ha5fkwc15c2tne.png" alt="Rotten Tomatoes" class="rating-icon" />
+  </div>
+</section>
+</div>
+<section class="origin-section">
+  <h2>🧠 The Origin of Thunderbolts</h2>
+  <p>
+    The idea for <strong>Thunderbolts</strong> was born out of a desire to explore the moral gray zones in the Marvel Cinematic Universe.
+    After years of heroic archetypes, Marvel Studios wanted to shift the lens toward flawed, complex characters who live outside the
+    traditional hero narrative. Inspired by the success of anti-hero-centric films like *Logan* and *The Suicide Squad*, Marvel saw
+    Thunderbolts as an opportunity to build a team of broken individuals seeking redemption — or revenge.
+  </p>
+  <p>
+    Development began quietly post-*Endgame*, with writers pulling from comics arcs involving Zemo, Yelena, U.S. Agent, and Ghost.
+    The project was greenlit as a bold move to reinvigorate the MCU with fresh emotional and psychological depth.
+  </p>
+</section>
+
+<section class="budget-section">
+  <h2>💵 Budget Breakdown</h2>
+  <p>
+    With an estimated budget of <strong>$190 million</strong>, Thunderbolts was one of the more modestly funded Marvel productions — yet it
+    delivered top-tier quality. A significant portion was invested in practical effects, location shooting, and gritty fight choreography
+    that gave the film a grounded, raw feel.
+  </p>
+  <p>
+    Unlike previous Marvel entries that leaned heavily on CGI spectacle, Thunderbolts focused its financial resources on <strong>character-driven scenes</strong>,
+    intimate cinematography, and high-caliber acting talent. This budget strategy paid off, giving the film an indie tone within a blockbuster shell.
+  </p>
+</section>
+ <!-- 1. TIMELINE SECTION -->
+  <section class="timeline-section">
+    <h2>⏳ Thunderbolts: Production Timeline</h2>
+    <ul class="timeline">
+      <li><strong>July 2021:</strong> Project confirmed in early Marvel Phase 5 planning.</li>
+      <li><strong>December 2021:</strong> Script development begins, inspired by darker comic arcs.</li>
+      <li><strong>May 2022:</strong> Cast finalized – including Yelena, Bucky, U.S. Agent, Taskmaster.</li>
+      <li><strong>August 2022:</strong> Filming begins in Atlanta with tight security and minimal leaks.</li>
+      <li><strong>January 2023:</strong> Post-production kicks off with a focus on practical effects.</li>
+      <li><strong>July 2023:</strong> Official trailer drops – fans lose their minds.</li>
+      <li><strong>March 2024:</strong> Global theatrical release.</li>
+    </ul>
+  </section>
+
+<!-- 2. PHOTO GALLERY -->
+<section class="gallery-section">
+  <h2>📸 Behind the Scenes</h2>
+  <div class="gallery">
+    <img loading="lazy" src="Behind the Scenes.jpeg" alt="Director on set" />
+    <img loading="lazy" src="Thunderbolts_ BTS (2025).jpeg" alt="Cast rehearsal" />
+    <img loading="lazy" src="Thunderbolts_ cast.jpeg" alt="Stunt team setup" />
+    <img loading="lazy" src="Behind the Scenes 2.jpeg" alt="Yelena in makeup" />
+  </div>
+</section>
+
+<section class="director-quotes-section">
+  <h2>🎬 Director's Insights</h2>
+  <div class="quotes-wrapper full-width">
+    <div class="quote-card">
+      <p>
+        "I wanted Thunderbolts to feel like a therapy session with explosions —
+        something deeply personal masked as a war movie."
+      </p>
+      <span>— Jake Schreier, Director</span>
+    </div>
+
+    <div class="quote-card">
+      <p>
+        "These characters aren’t just weapons — they’re broken people trying to
+        rebuild themselves through chaos."
+      </p>
+      <span>— Jake Schreier</span>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 4. VIDEO BACKGROUND SECTION -->
+<section class="video-background-section">
+  <video autoplay muted loop class="bg-video">
+    <source src="thunderbolts-bkg.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-content">
+    <h2>⚡ The Thunder Within</h2>
+    <p>A visual journey into the soul of Marvel’s most conflicted team.</p>
+  </div>
+</section>
+<footer>
+      <div class="footer-top">
+        <a href="Yelena Belova.html"><div>Yelena Belova</div></a>
+        <a href="Bucky Barnes.html"><div>Bucky Barnes</div></a>
+        <a href="u.s agent.html"><div>John Walker</div></a>
+        <a href="robert reynolds.html"><div>Robert Reynolds</div></a>
+        <a href="Alexei Shostakov.html"><div>Alexei Shostakov</div></a>
+        <a href="Ava Starr.html"><div>Ava Starr</div></a>
+        <a href="MARVEL Studios.html"><div>MARVEL</div></a>
+        <a href="#"><div>IMDB</div></a>
+        <a href="Thunderbolts 2025.html"><div>Thunderbolts*</div></a>
+        <a href="jake schreier.html"><div>jake schreier</div></a>
+        <div>Thunderbolts*</div>
+        </a>
+      </div>
+      <div class="social-icons">
+        <img src="youtuip.png" alt="YouTube" />
+        <img src="towwtter.png" alt="Twitter" />
+        <img src="instgram.png" alt="Instagram" />
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025-2026 CompanyName Inc.</p>
+      </div>
+    </footer>
+    
+
+
+
+<script>
+ 
+function animateValue(id, start, end, duration, suffix = '', decimals = 0) {
+  let current = start;
+  const range = end - start;
+  const increment = range / (duration / 10);
+  const obj = document.getElementById(id);
+  let step = 0;
+
+   // Flag علشان نظهر الأيقونة مرة واحدة بس
+  let iconShown = false;
+
+  const timer = setInterval(() => {
+    current += increment;
+    step++;
+    if (current >= end || step > duration / 10) {
+      current = end;
+      clearInterval(timer);
+      
+    }
+    
+    obj.textContent = current.toFixed(decimals) + suffix;
+        // ✅ لما تتعدى الرقم 1 تظهر الأيقونة
+    if (!iconShown && current >= 0) {
+      const icon = obj.parentElement.parentElement.querySelector('.rating-icon');
+      if (icon) {
+        icon.style.opacity = 1;
+        icon.style.transform = 'scale(1)';
+        iconShown = true; // علشان ما تتكرر
+      }
+    }
+  }, 10);
+}
+
+function animateCircle(id, value) {
+  const circle = document.getElementById(id);
+  circle.setAttribute('stroke-dasharray', `${value}, 100`);
+}
+
+window.addEventListener('load', () => {
+  // أرجع الصفحة لفوق
+  window.scrollTo(0, 0);
+
+  // شغّل حركة الدوائر والأرقام بعد ثانية واحدة
+  setTimeout(() => {
+    animateValue('imdb-score', 0, 7.7, 3000, '', 1);     // المدة 3000ms
+    animateValue('rt-score', 0, 88, 3000, '%', 0);
+    animateCircle('imdb-progress', 77);
+    animateCircle('rt-progress', 88);
+  }, 1000);
+});
+
+
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.addEventListener("load", () => {
+    // أرجع الصفحة لفوق
+    window.scrollTo(0, 0);
+
+    // لو فيه input معين عايز تركز عليه، خليه بعد شوية
+    setTimeout(() => {
+      const input = document.getElementById("search-box");
+      if (input) input.focus();
+    }, 500);
+  });
+
+  window.onbeforeunload = () => {
+    window.scrollTo(0, 0);
+  };
+
+
+ // === البحث عن الصفحات ===
+const routes = {
+  "home": "index.html",
+  "thunderbolts": "Thunderbolts 2025.html",
+  "imd": "Imd.html",
+  "marvel": "MARVEL Studios.html",
+  "jake schreier": "jake schreier.html",
+  "yelena belova": "Yelena Belova.html",
+  "bucky barnes": "Bucky Barnes.html",
+  "john walker": "u.s agent.html",
+  "ava starr": "Ava Starr.html",
+  "sentry": "robert reynolds.html",
+  "alexei shostakov": "Alexei Shostakov.html"
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  // === تفعيل الـ Search Box ===
+  const searchInput = document.getElementById("search-box");
+  if (searchInput) {
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const input = this.value.trim().toLowerCase();
+        let found = false;
+
+        for (let key in routes) {
+          if (key.includes(input)) {
+            setTimeout(() => {
+              window.location.href = routes[key];
+            }, 2000); // ⏱ تأخير هنا كمان
+            found = true;
+            break;
+          }
+        }
+
+        if (!found) {
+          alert("🔍 الكلمة غير معروفة، جرّب اسم شخصية أو عنوان صفحة.");
+        }
+      }
+    });
+  }
+
+  // === تأخير التنقل عند الضغط على أي رابط ===
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const url = this.getAttribute('href');
+      if (!url || url.startsWith("#")) return;
+
+      e.preventDefault(); // نمنع الانتقال الفوري
+      setTimeout(() => {
+        window.location.href = url;
+      }, 2000); // ⏱ التأخير هنا (2 ثانية)
+    });
+  });
+});
+</script>
+
+</body>
+</html>

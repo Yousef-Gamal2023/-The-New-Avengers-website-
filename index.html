@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="description" content="refers to both a comic book team and a 2025 Marvel Studios film, previously known as Thunderbolts*.">
+<meta name="keywords" content="Avengers: Doomsday,The New Avengers,Yelena Belova , Bucky Barnes , John Walker , Robert Reynolds , Alexei Shostakov , Ava Starr,imdb,marvel,thunderbolts,marvel studios,jake schreier,rotten tomatoes">
+<meta name="author" content="yousef gamal">
+<meta name="Robots" content="index , follow" />
+
+ <!-- Open Graph / Facebook -->
+<meta property="og:title" content="The New Avengers | Thunderbolts*" />
+<meta property="og:description" content="refers to both a comic book team and a 2025 Marvel Studios film, previously known as Thunderbolts*." />
+<meta property="og:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+<meta property="og:url" content="https://yourdomain.com/Ava%20Starr.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Avengers." />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The New Avengers | Thunderbolts*" />
+<meta name="twitter:description" content="refers to both a comic book team and a 2025 Marvel Studios film, previously known as Thunderbolts*." />
+<meta name="twitter:image" content="https://yourdomain.com/images/ava-og-image.jpg" />
+
+    <style>
+      /* === RESET & BASE === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: "Segoe UI", sans-serif;
+        background: #000;
+        overflow: hidden;
+      }
+
+      /* === PAGE ANIMATION === */
+      .page-fade-in {
+        animation: pageFadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      @keyframes pageFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(1.04);
+          filter: blur(8px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+          filter: blur(0);
+        }
+      }
+
+      /* === BACKGROUND SLIDES === */
+      .bg-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        opacity: 0;
+        z-index: 0;
+        transform: scale(1.1);
+        transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+      }
+      .bg-slide.active {
+        opacity: 1;
+        z-index: 1;
+        transform: scale(1);
+      }
+
+      /* === OVERLAY TEXT === */
+      .overlay-text {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        color: #fff;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        border-radius: 16px;
+        max-width: 420px;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s ease;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .overlay-text.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .overlay-text h1 {
+        font-size: 32px;
+        margin-bottom: 14px;
+      }
+      .overlay-text p {
+        font-size: 13px;
+        margin-bottom: 14px;
+      }
+      .overlay-text button {
+        width: fit-content;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #a8ff35;
+        border: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+      }
+      .overlay-text button:hover {
+        background-color: #cfff59;
+      }
+
+      /* === CARD CONTAINER === */
+      .cards-container {
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        z-index: 5;
+        opacity: 1;
+      }
+      .cards-container.show {
+        opacity: 1;
+      }
+
+      .card {
+        width: 290px;
+        height: 200px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s ease-in-out;
+        flex-shrink: 0;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        display: block;
+      }
+
+      /* === DOTS === */
+      .dot-indicators {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 320px;
+        z-index: 5;
+      }
+      .dot {
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transition: background 0.4s;
+      }
+      .dot.active {
+        background: #a8ff35;
+      }
+
+      /* === RESPONSIVE === */
+      @media (max-width: 1268px) {
+        .overlay-text {
+          max-width: 92%;
+          top: 20px;
+          left: 10px;
+          padding: 14px;
+          border-radius: 12px;
+        }
+        .overlay-text h1 {
+          font-size: 22px;
+        }
+        .overlay-text p {
+          font-size: 11px;
+        }
+        .overlay-text button {
+          font-size: 12px;
+          padding: 8px 16px;
+        }
+        .cards-container {
+          flex-wrap: wrap;
+          gap: 15px;
+          bottom: 120px;
+        }
+        .card {
+          width: 35%;
+          height: 100px;
+        }
+        .dot-indicators {
+          bottom: 20px;
+          gap: 8px;
+        }
+        .dot {
+          width: 10px;
+          height: 10px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .overlay-text {
+          top: 30px;
+          padding: 16px;
+          max-width: 90%;
+        }
+        .overlay-text h1 {
+          font-size: 26px;
+        }
+        .overlay-text p {
+          font-size: 12px;
+        }
+        .cards-container {
+          bottom: 70px;
+          gap: 20px;
+        }
+        .card {
+          width: 240px;
+          height: 160px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .bg-slide {
+          background-size: cover;
+          background-position: top center;
+          background-attachment: fixed;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .overlay-text {
+          top: 16px;
+          padding: 10px;
+          border-radius: 10px;
+        }
+        .overlay-text h1 {
+          font-size: 18px;
+        }
+        .overlay-text p {
+          font-size: 10px;
+        }
+        .overlay-text button {
+          font-size: 11px;
+          padding: 6px 12px;
+        }
+        .cards-container {
+          flex-direction: column;
+          align-items: center;
+          bottom: 50px;
+          gap: 10px;
+          padding: 0 10px;
+        }
+        .card {
+          width: 90%;
+          height: 130px;
+        }
+        .dot-indicators {
+          bottom: 16px;
+          gap: 6px;
+        }
+        .dot {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .bg-slide {
+          background-size: 100% 30%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+        .card {
+          width: 47%;
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body class="page-fade-in">
+    <div class="carousel-container">
+      <div
+        class="bg-slide active"
+        style="background-image: url('1393765.jpg');"
+      ></div>
+      <div
+        class="bg-slide"
+        style="background-image: url('wp2700184-marvel-logo-wallpaper.jpg');"
+      ></div>
+      <div
+        class="bg-slide"
+        style="
+          background-image: url('20250627_1539_IMDb Logo_simple_compose_01jyrpan47e53vs5ssf1354pbg.png');
+        "
+      ></div>
+      <div
+        class="bg-slide"
+        style="background-image: url('hqdefault_upscayl_5x_high-fidelity-4x.png');"
+      ></div>
+
+      <div class="overlay-text show">
+        <h1 id="main-title"></h1>
+        <p></p>
+        <button id="cta-button"></button>
+      </div>
+
+      <div class="cards-container show">
+        <a href="Thunderbolts 2025.html" class="card"
+          ><img
+            src="thunderbolts-d23-brazil-feature-image.avif"
+            alt="Thunderbolts"
+        /></a>
+        <a href="MARVEL Studios.html" class="card"
+          ><img src="wp2700184-marvel-logo-wallpaper.jpg" alt="Marvel"
+        /></a>
+        <a href="Imd.html" class="card"
+          ><img
+            src="20250627_1539_IMDb Logo_simple_compose_01jyrpan47e53vs5ssf1354pbg.png"
+            alt="IMDb"
+        /></a>
+        <a href="jake schreier.html" class="card"
+          ><img
+            src="20250630_1215_Jake Schreier Signature_simple_compose_01jz01w87pe63a469sjpj6r22r.png"
+            alt="Jake Schreier"
+        /></a>
+      </div>
+
+      <div class="dot-indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    
+
+    <script>
+      const slides = document.querySelectorAll(".bg-slide");
+      const dots = document.querySelectorAll(".dot");
+      const overlay = document.querySelector(".overlay-text");
+      const cards = document.querySelector(".cards-container");
+      const mainTitle = document.getElementById("main-title");
+      const ctaButton = document.getElementById("cta-button");
+
+      const titles = ["Thunderbolts", "MARVEL", "IMDb", "Jake Schreier"];
+      const paragraphs = [
+        "The beginning of a new era, the new Avengers.",
+        "Marvel story and stories.",
+        "Rate the movie.",
+        "Jake Schreier Beginning.",
+      ];
+      const ctas = ["Explore Now", "Explore Now", "Explore Now", "Explore Now"];
+      const exploreLinks = [
+        "Thunderbolts 2025.html",
+        "MARVEL Studios.html",
+        "Imd.html",
+        "jake schreier.html",
+      ];
+
+      let index = 0;
+
+      function updateContent() {
+        mainTitle.textContent = titles[index];
+        document.querySelector(".overlay-text p").textContent =
+          paragraphs[index];
+        ctaButton.textContent = ctas[index];
+        ctaButton.onclick = () => (window.location.href = exploreLinks[index]);
+        
+      }
+      
+
+      function animateSlide() {
+        slides[index].classList.remove("active");
+        dots[index].classList.remove("active");
+        overlay.classList.remove("show");
+        cards.classList.remove("show");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+        setTimeout(() => {
+          updateContent();
+          overlay.classList.add("show");
+          cards.classList.add("show");
+        }, 700);
+      }
+
+      updateContent();
+      overlay.classList.add("show");
+      cards.classList.add("show");
+      setInterval(animateSlide, 5000);
+
+      window.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.remove("page-fade-in");
+        }, 1200);
+      });
+      
+
+
+      
+    function updateContent() {
+  mainTitle.textContent = titles[index];
+  document.querySelector(".overlay-text p").textContent = paragraphs[index];
+  ctaButton.textContent = ctas[index];
+
+  // الزرار دلوقتي هينتقل بعد 1 ثانية تأخير
+  ctaButton.onclick = () => {
+    setTimeout(() => {
+      window.location.href = exploreLinks[index];
+    }, 1000);
+  };
+}
+
+const cardLinks = document.querySelectorAll(".cards-container a");
+cardLinks.forEach((card) => {
+  card.addEventListener("click", (e) => {
+    e.preventDefault(); // منع الانتقال الفوري
+    const link = card.getAttribute("href");
+    setTimeout(() => {
+      window.location.href = link;
+    }, 1000); // تأخير 1 ثانية
+  });
+});
+
+
+    </script>
+  </body>
+</html>
